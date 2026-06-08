@@ -1,6 +1,6 @@
 import mysql.connector
 
-# Database Connection
+
 conn = mysql.connector.connect(
     host="localhost",
     user="root",
@@ -11,7 +11,7 @@ conn = mysql.connector.connect(
 cursor = conn.cursor()
 
 
-# Create Account
+
 def create_account():
     name = input("Enter Account Holder Name: ")
     balance = float(input("Enter Initial Deposit: "))
@@ -26,7 +26,7 @@ def create_account():
     print("Account Number:", cursor.lastrowid)
 
 
-# Deposit Money
+
 def deposit():
     acc_no = int(input("Enter Account Number: "))
     amount = float(input("Enter Deposit Amount: "))
@@ -40,7 +40,7 @@ def deposit():
     print("Deposit Successful!")
 
 
-# Withdraw Money
+
 def withdraw():
     acc_no = int(input("Enter Account Number: "))
 
@@ -72,7 +72,7 @@ def withdraw():
         print("Account Not Found!")
 
 
-# Check Balance
+
 def check_balance():
     acc_no = int(input("Enter Account Number: "))
 
@@ -92,7 +92,7 @@ def check_balance():
         print("Account Not Found!")
 
 
-# View All Accounts
+
 def view_accounts():
     cursor.execute("SELECT * FROM accounts")
 
@@ -106,7 +106,7 @@ def view_accounts():
         )
 
 
-# Main Menu
+
 while True:
     print("\n===== BANK MANAGEMENT SYSTEM =====")
     print("1. Create Account")
